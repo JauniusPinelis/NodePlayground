@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": " env-cmd --file ./config/test.env jest",
-    "start": "node index.js",
-    "dev": "env-cmd --file ./config/dev.env nodemon index.js"
+    "test": "SET NODE_ENV=test & jest --detectOpenHandles",
+    "start": "SET NODE_ENV=development & node index.js",
+    "dev": "SET NODE_ENV=development & nodemon index.js"
   },
   "jest": {
     "testEnvironment": "node"
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.12",
